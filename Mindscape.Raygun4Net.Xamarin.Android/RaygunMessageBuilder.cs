@@ -20,9 +20,14 @@ namespace Mindscape.Raygun4Net
 
     private readonly RaygunMessage _raygunMessage;
 
-    private RaygunMessageBuilder()
+    protected RaygunMessageBuilder()
+        : this(new RaygunMessage())
+    { 
+    }
+
+    protected RaygunMessageBuilder(RaygunMessage message)
     {
-      _raygunMessage = new RaygunMessage();
+        _raygunMessage = message;
     }
 
     public RaygunMessage Build()
